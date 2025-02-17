@@ -1,30 +1,9 @@
+import tailwind from 'eslint-plugin-tailwindcss'
 import withNuxt from './.nuxt/eslint.config.mjs'
 
-export default withNuxt(
+export default withNuxt([
+  ...tailwind.configs['flat/recommended'],
   {
-    rules: {
-      'camelcase': 'off',
-      'dot-notation': 'off',
-      'max-len': ['error', { code: 100, tabWidth: 2, comments: 140 }],
-      'no-console': [2, { allow: ['error', 'info', 'warn'] }],
-      'no-lonely-if': 'off',
-      'semi': [2, 'never'],
-      'vue/component-tags-order': [
-        'error',
-        {
-          order: ['script:not([setup])', 'script[setup]', 'template', 'style'],
-        },
-      ],
-      'vue/html-indent': 'off',
-      'vue/html-self-closing': 'off',
-      'vue/max-attributes-per-line': 'off',
-      'vue/multi-word-component-names': 'off',
-      'vue/multiline-html-element-content-newline': 'off',
-      'vue/no-lone-template': 'off',
-      'vue/no-multiple-template-root': 'off',
-      'vue/no-mutating-props': 'off',
-      'vue/singleline-html-element-content-newline': 'off',
-    },
     ignores: [
       // FOLDER
       '.devcontainer',
@@ -47,9 +26,33 @@ export default withNuxt(
     ],
   },
   {
-    files: ['.yarn/**/*'],
     rules: {
+      'camelcase': 'off',
+      'dot-notation': 'off',
       'eslint-comments/no-unlimited-disable': 'off',
+      'max-len': ['error', { code: 100, tabWidth: 2, comments: 140 }],
+      'no-console': [2, { allow: ['error', 'info', 'warn'] }],
+      'no-lonely-if': 'off',
+      'semi': [2, 'never'],
+      'tailwindcss/no-custom-classname': 'off',
+      'vue/component-tags-order': [
+        'error',
+        {
+          order: ['script:not([setup])', 'script[setup]', 'template', 'style'],
+        },
+      ],
+      'vue/html-indent': 'off',
+      'vue/html-self-closing': 'off',
+      'vue/max-attributes-per-line': 'off',
+      'vue/multi-word-component-names': 'off',
+      'vue/multiline-html-element-content-newline': 'off',
+      'vue/no-lone-template': 'off',
+      'vue/no-multiple-template-root': 'off',
+      'vue/no-mutating-props': 'off',
+      'vue/singleline-html-element-content-newline': 'off',
     },
   },
-)
+  {
+    files: ['.yarn/**/*'],
+  },
+])

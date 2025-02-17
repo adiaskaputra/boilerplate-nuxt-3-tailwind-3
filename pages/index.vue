@@ -1,7 +1,9 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div>B O I L E R P L A T E</div>
+  <div class="flex items-center justify-between px-3 py-2">
+    B O I L E R P L A T E
+  </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="postcss" scoped></style>

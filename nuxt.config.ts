@@ -45,6 +45,15 @@ export default defineNuxtConfig({
       },
     },
   },
+  postcss: {
+    plugins: {
+      'postcss-hexrgba': {},
+      'tailwindcss/nesting': {},
+      'tailwindcss': {},
+      'postcss-lighten-darken': {},
+      'autoprefixer': {},
+    },
+  },
   eslint: {
     config: {
       stylistic: {
